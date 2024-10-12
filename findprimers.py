@@ -1,4 +1,5 @@
 import streamlit as st
+st.title("Primer designer")
 seq=st.text_input("Enter your Gene Sequence:").lower()
 if len(seq)!=0:
     lenrrs=6
