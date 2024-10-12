@@ -59,6 +59,8 @@ if len(seq)!=0:
         foundppairs=len(pprimers)
         plen+=1
     sorted_primers = sorted(pprimers, key=lambda x: float(x.split(':')[-1]))
+    st.sucess(fprimers)
+    st.success(rprimers)
     for p in sorted_primers:
         pf=p.split(":")
         st.text(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
