@@ -29,6 +29,7 @@ def rcomp(seq):
             cseq+="a"
     return cseq
 while foundppairs==0 and plen<=maxplen:
+    st.write("1")
     i=18
     while i<plen:
         if seq[i-1]=="g" or seq[i-1]=="c":
