@@ -28,7 +28,6 @@ def rcomp(seq):
         else:
             cseq+="a"
     return cseq
-st.write(f"{rcomp(seq)}")
 while foundppairs==0 and plen<=maxplen:
     i=18
     while i<plen:
@@ -61,7 +60,7 @@ while foundppairs==0 and plen<=maxplen:
 sorted_primers = sorted(pprimers, key=lambda x: float(x.split(':')[-1]))
 for p in sorted_primers:
     pf=p.split(":")
-    st.write(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
-    st.write(f"reverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")
-    st.write(f"delta:{pf[-1]}")
-    st.write("------------")
+    st.text(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
+    st.text(f"reverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")
+    st.text(f"delta:{pf[-1]}")
+    st.text("------------")
