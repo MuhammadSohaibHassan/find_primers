@@ -1,5 +1,5 @@
 import streamlit as st
-seq=st.text_input("enter your seq:").lower()
+seq=st.text_input("Enter your Gene Sequence:").lower()
 if len(seq)!=0:
     lenrrs=6
     fprimers=[]
