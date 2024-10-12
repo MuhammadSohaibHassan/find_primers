@@ -1,6 +1,6 @@
 import streamlit as st
 st.title("Primer designer")
-values = st.slider("Select a range of values", 0.0, 100.0, (25.0, 75.0))
+values = st.slider("Select min and max length for primers", 15, 30, (18, 25))
 st.write("Values:", values)
 seq=st.text_input("Enter your Gene Sequence:").lower()
 if len(seq)!=0:
