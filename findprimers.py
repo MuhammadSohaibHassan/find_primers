@@ -1,6 +1,6 @@
 import streamlit as st
 seq=st.text_input("enter your seq:")
-lenrrs=st.number_input("length of restriction seq at 3':")
+lenrrs=6
 fprimers=[]
 rprimers=[]
 pprimers=[]
