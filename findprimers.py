@@ -1,7 +1,6 @@
 import streamlit as st
 st.title("Primer designer")
-values = st.slider("Select min and max length for primers", 15, 30, (18, 25))
-st.write("Values:", values)
+values = st.slider("Select min and max length for primers", 15, 33, (18, 30))
 seq=st.text_input("Enter your Gene Sequence:").lower()
 if len(seq)!=0:
     lenrrs=6
@@ -9,7 +8,8 @@ if len(seq)!=0:
     rprimers=[]
     pprimers=[]
     foundppairs=0
-    maxplen=30
+    minplen-values[0]
+    maxplen=values[1]
     plen=25
     def gc(seq):
         g=seq.count("g")
@@ -33,13 +33,13 @@ if len(seq)!=0:
                 cseq+="a"
         return cseq
     while foundppairs==0 and plen<=maxplen:
-        i=18
+        i=minplen
         while i<plen:
             if seq[i-1]=="g" or seq[i-1]=="c":
                 tempseq=seq[:i]
                 fprimers.append(tempseq)
             i+=1
-        i=18
+        i=minplen
         while i<plen:
             if seq[-i]=="g" or seq[-i]=="c":
                 tempseq=seq[-i:]
