@@ -1,5 +1,5 @@
 import streamlit as st
-seq=st.text_input("enter your seq:")
+seq=st.text_input("enter your seq:").lower()
 lenrrs=6
 fprimers=[]
 rprimers=[]
