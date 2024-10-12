@@ -8,7 +8,7 @@ if len(seq)!=0:
     rprimers=[]
     pprimers=[]
     foundppairs=0
-    minplen-values[0]
+    minplen=values[0]
     maxplen=values[1]
     plen=25
     def gc(seq):
