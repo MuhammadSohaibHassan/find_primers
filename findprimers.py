@@ -37,7 +37,6 @@ if len(seq)!=0:
                 fprimers.append(tempseq)
             i+=1
         i=18
-        st.success(fprimers)
         while i<plen:
             if seq[-i]=="g" or seq[-i]=="c":
                 tempseq=seq[-i:]
@@ -62,7 +61,8 @@ if len(seq)!=0:
     sorted_primers = sorted(pprimers, key=lambda x: float(x.split(':')[-1]))
     for p in sorted_primers:
         pf=p.split(":")
-        st.text(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
-        st.text(f"reverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")
-        st.text(f"delta:{pf[-1]}")
-        st.text("------------")
+        fpp=""
+        fpp+=(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")+"\n"
+        fpp+=(f"reverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")+"\n"
+        fpp+=(f"delta:{pf[-1]}")+"\n"
+        st.success(fpp)
