@@ -65,4 +65,4 @@ if len(seq)!=0:
         fpp+=(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
         fpp+=(f"\nreverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")
         fpp+=(f"\ndelta:{pf[-1]}")
-        st.success(fpp)
+        st.text(fpp)
