@@ -62,7 +62,7 @@ if len(seq)!=0:
     for p in sorted_primers:
         pf=p.split(":")
         fpp=""
-        fpp+=(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")+"\n"
-        fpp+=(f"reverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")+"\n"
-        fpp+=(f"delta:{pf[-1]}")
+        fpp+=(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
+        fpp+=(f"\nreverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")
+        fpp+=(f"\ndelta:{pf[-1]}")
         st.success(fpp)
