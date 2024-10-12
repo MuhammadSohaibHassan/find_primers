@@ -46,6 +46,7 @@ while foundppairs==0 and plen<=maxplen:
         for rp in rprimers:
             fpgc=gc(fp)
             rpgc=gc(rp)
+            st.write(f"{fpgc}:{rpgc}")
             if (fpgc>=40 and fpgc<=60) and (rpgc>=40 and rpgc<=60):
                 fpmt=mt(fp)
                 rpmt=mt(rp)
