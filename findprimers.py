@@ -31,10 +31,11 @@ footer{
 }
 
 .credits{
-    display:flex;
-    justify-content:center;
+    
     position: fixed;
     bottom: 0em;
+    display:flex;
+    justify-content:center;
     color:#71e388;
     font-size: 1.0em;
 }
