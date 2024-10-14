@@ -33,7 +33,7 @@ footer{
 .footer{
     position: fixed;
     bottom: 0em;
-    right: 12em;
+    right: 50%;
     color:#71e388;
     font-size: 1.0em;
 }
