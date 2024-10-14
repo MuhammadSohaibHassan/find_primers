@@ -61,7 +61,7 @@ if len(seq)!=0 and len(fsite)!=0 and len(rsite)!=0:
     for p in sorted_pprimers:
         pf=p.split(":")
         fpp=""
-        fpp+=(f"forward primer:{pf[0].upper()}:{pf[1]}:{pf[2]}:{pf[3]}")
-        fpp+=(f"\nreverse primer:{pf[4].upper()}:{pf[5]}:{pf[6]}:{pf[7]}")
-        fpp+=(f"\ndelta:{pf[-1]}")
+        fpp+=(f"forward primer--{pf[0].upper()}--{pf[1]} % --{pf[2]} C --{pf[3]} bp")
+        fpp+=(f"\nreverse primer--{pf[4].upper()}--{pf[5]} % --{pf[6]} C --{pf[7]} bp")
+        fpp+=(f"\ndelta:{pf[-1]} C")
         st.text(fpp)
