@@ -1,4 +1,4 @@
-import streamlit as st
+`import streamlit as st
 st.title("Primer designer")
 seq=st.text_input("Gene Sequence").lower()
 fsite=st.text_input("Forward res site Sequence").lower()
