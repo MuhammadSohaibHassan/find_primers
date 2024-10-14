@@ -33,7 +33,7 @@ footer{
 .credits{
     position:fixed;
     bottom:0em;
-    right:1.2em;
+    right:150px;
     color:#71e388;
     font-size: 1.0em;
 }
