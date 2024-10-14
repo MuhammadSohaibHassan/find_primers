@@ -46,8 +46,7 @@ footer{
 
 <span class="title">Primer Search</span>
 <span class="subtitle">Find best possible primers with matching annealing temperatures</span>
-<span class="footer">By Muhammad Sohaib Hassan (SBB PU Lhr)
-Umer Amjad</span>
+<span class="footer">By Muhammad Sohaib Hassan and Umer Amjad (SBB PU LHR)</span>
 
 """
 
