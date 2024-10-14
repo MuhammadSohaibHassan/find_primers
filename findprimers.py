@@ -57,11 +57,11 @@ if len(seq)!=0 and len(fsite)!=0 and len(rsite)!=0:
                         rp=rsite+rp[lenrsite:]
                         primersstr=f"{fp}:{round(fpgc,3)}:{round(fpmt,3)}:{len(fp)}:{rp}:{round(rpgc,3)}:{round(rpmt,3)}:{len(rp)}:{round(delta,3)}"
                         pprimers.append(primersstr)
-    sorted_pprimers = sorted(pprimers, key=lambda item: max(int(item.split(':')[3]), int(item.split(':')[7])))
+    sorted_pprimers = sorted(pprimers, key=lambda item: max(int(item.split(':')[3]), int(item.split(':')[7])))    
     for p in sorted_pprimers:
         pf=p.split(":")
         fpp=""
-        fpp+=(f"forward primer -- {pf[0].upper()} -- {pf[1]} % -- {pf[2]} C -- {pf[3]} bp")
-        fpp+=(f"\nreverse primer -- {pf[4].upper()} -- {pf[5]} % -- {pf[6]} C -- {pf[7]} bp")
+        fpp+=(f"Forward primer -- {pf[0].upper()} -- {pf[1]} % -- {pf[2]} C -- {pf[3]} bp")
+        fpp+=(f"\nReverse primer -- {pf[4].upper()} -- {pf[5]} % -- {pf[6]} C -- {pf[7]} bp")
         fpp+=(f"\ndelta:{pf[-1]} C")
         st.text(fpp)
