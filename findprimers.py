@@ -31,6 +31,7 @@ footer{
 }
 
 .credits{
+    position:fixed;
     bottom:0em;
     right:1.2em;
     color:#71e388;
