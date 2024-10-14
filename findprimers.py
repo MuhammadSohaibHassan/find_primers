@@ -107,7 +107,7 @@ if len(seq)!=0:
                         pprimers.append(primersstr)
     sorted_pprimers = sorted(pprimers, key=lambda item: max(int(item.split(':')[3]), int(item.split(':')[7]))) 
     if len(sorted_pprimers)>0:
-        st.success("Key: Primer seq -- GC content % -- Melting temperature C -- Length bp")
+        st.success("Key :   Primer seq -- GC content % -- Melting temperature C -- Length bp")
         st.text(f"Possible primer pairs found : {len(sorted_pprimers)}")
     for p in sorted_pprimers:
         pf=p.split(":")
