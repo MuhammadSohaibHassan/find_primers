@@ -3,7 +3,7 @@ st.title("Best primers")
 seq=st.text_input("Gene Sequence").lower()
 fsite=st.text_input("Forward res site Sequence").lower()
 rsite=st.text_input("Reverse res site Sequence").lower()
-if len(seq)!=0 and len(fsite)!=0 and len(rsite)!=0:
+if len(seq)!=0:
     seq=fsite+seq+rsite
     lenrsite=len(rsite)
     fprimers=[]
