@@ -31,10 +31,8 @@ footer{
 }
 
 .credits{
-    display:flex;
-    justify-content:center;
-    position:fixed;
-    bottom:100px;
+    bottom:0em;
+    right:1.2em;
     color:#71e388;
     font-size: 1.0em;
 }
