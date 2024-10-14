@@ -63,5 +63,5 @@ if len(seq)!=0 and len(fsite)!=0 and len(rsite)!=0:
         fpp=""
         fpp+=(f"Forward primer -- {pf[0].upper()} -- {pf[1]} % -- {pf[2]} C -- {pf[3]} bp")
         fpp+=(f"\nReverse primer -- {pf[4].upper()} -- {pf[5]} % -- {pf[6]} C -- {pf[7]} bp")
-        fpp+=(f"\ndelta:{pf[-1]} C")
+        fpp+=(f"\ndelta : {pf[-1]} C")
         st.text(fpp)
