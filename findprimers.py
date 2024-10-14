@@ -30,9 +30,8 @@ footer{
     font-size: 1.5em;
 }
 
-.footer{
+.credits{
     display:flex;
-    align-items:center;
     justify-content:center;
     position: fixed;
     bottom: 0em;
@@ -44,7 +43,7 @@ footer{
 
 <span class="title">Primer Search</span>
 <span class="subtitle">Find best possible primers with matching annealing temperatures</span>
-<span class="footer">Supervised by: Dr. Shahbaz Aslam (Associate Prof. SBB PU)<br>By Muhammad Sohaib Hassan and Umer Amjad (SBB PU LHR)</span>
+<span class="credits">Supervised by: Dr. Shahbaz Aslam (Associate Prof. SBB PU)<br>By Muhammad Sohaib Hassan and Umer Amjad (SBB PU LHR)</span>
 
 """
 
