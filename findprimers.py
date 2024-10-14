@@ -33,6 +33,7 @@ footer{
 .footer{
     display:flex;
     align-items:center;
+    justify-content:center;
     position: fixed;
     bottom: 0em;
     color:#71e388;
