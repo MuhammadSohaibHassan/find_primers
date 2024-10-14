@@ -1,4 +1,58 @@
 import streamlit as st
+
+cus = """
+
+<style>
+
+#root > div:nth-child(1) > div.withScreencast > div > div > header{
+    visibility:hidden;
+    }
+
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-1ec6rqw.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3 > div.st-emotion-cache-1b9x38r.eczjsme2 > button{
+    visibility:hidden;
+}
+    
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-1ec6rqw.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3{
+    background:#0e2e16;
+}
+
+footer{
+    visibility: hidden;
+}
+
+.title{
+    color:#71e388;
+    display:flex;
+    justify-content:center;
+    font-size: 2.5em;
+}
+
+.subtitle{
+    color:#71e388;
+    display:flex;
+    justify-content:center;
+    font-size: 1.5em;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0em;
+    right: 12em;
+    color:#71e388;
+    font-size: 1.0em;
+}
+
+</style>
+
+<span class="title">Primer Search</span>
+<span class="subtitle">Find best possible primers with matching annealing temperatures</span>
+<span class="footer">By Muhammad Sohaib Hassan (SBB PU Lhr)</span>
+
+"""
+
+st.markdown(cus,unsafe_allow_html=True)
+
+
 st.title("Primer Search")
 seq=st.text_input("Gene Sequence").lower()
 fsite=st.text_input("Forward res site Sequence").lower()
