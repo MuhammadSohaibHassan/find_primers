@@ -31,6 +31,8 @@ footer{
 }
 
 .footer{
+    display:flex;
+    align-items:center;
     position: fixed;
     bottom: 0em;
     right: 50%;
