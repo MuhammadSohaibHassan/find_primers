@@ -41,3 +41,6 @@ if (Is-Prime -Number $Number) {
 } else {
     Write-Host "The number $Number is NOT a prime number." -ForegroundColor Red
 }
+# At the end of your script
+Read-Host "Press Enter to exit"
+
