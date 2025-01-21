@@ -28,14 +28,9 @@ function Is-Prime {
 }
 
 # Check if the 'Number' argument is provided
-if ($args.Length -eq 0) {
-    Write-Host "Error: A 'Number' parameter is required." -ForegroundColor Red
-    Write-Host "Example usage: iwr -useb 'https://raw.githubusercontent.com/YourUsername/CheckPrime/main/CheckPrime.ps1' | iex -ArgumentList 29"
-    exit 1
-}
-
-# Get the 'Number' from the argument
-$Number = [int]$args[0]
+param (
+    [int]$Number
+)
 
 # Check if the number is prime and output the result
 if (Is-Prime -Number $Number) {
