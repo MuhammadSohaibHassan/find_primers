@@ -1,46 +1,78 @@
 # Function to check if a number is prime
 function Is-Prime {
     param (
+        [Parameter(Mandatory = $true)]
         [int]$Number
     )
-
-    if ($Number -lt 2) {
+    
+    # Edge case: 1 is not prime
+    if ($Number -le 1) {
         return $false
     }
-    for ($i = 2; $i -le [math]::Sqrt($Number); $i++) {
+
+    # 2 is the only even prime number
+    if ($Number -eq 2) {
+        return $true
+    }
+
+    # Exclude even numbers greater than 2
+    if ($Number % 2 -eq 0) {
+        return $false
+    }
+
+    # Check odd numbers from 3 to the square root of the number
+    $limit = [math]::Sqrt($Number)
+    for ($i = 3; $i -le $limit; $i += 2) {
         if ($Number % $i -eq 0) {
             return $false
         }
     }
+    
     return $true
 }
 
-# Parse query parameters from the script URL
-$scriptUrl = $MyInvocation.MyCommand.Definition
-$parsedUrl = [uri]$scriptUrl
-$queryParams = $parsedUrl.Query -split "&" | ForEach-Object {
-    $kvp = $_ -split "="
-    @{$kvp[0] = $kvp[1]}
+# Function to parse query string parameters from the URL
+function Parse-QueryParams {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Url
+    )
+
+    $uri = [uri]$Url
+    $queryParams = @{}
+
+    if ($uri.Query) {
+        $uri.Query.TrimStart('?').Split('&') | ForEach-Object {
+            $key, $value = $_ -split '=', 2
+            $queryParams[$key] = $value
+        }
+    }
+
+    return $queryParams
 }
 
-# Extract the 'Number' parameter from query
-$Number = $queryParams["Number"]
+# Fetch and parse query parameters from the current URL
+$scriptUrl = $MyInvocation.MyCommand.Definition
+$queryParams = Parse-QueryParams -Url $scriptUrl
 
-# Ensure the Number is provided and valid
-if (-not $Number -or -not ($Number -as [int])) {
-    Write-Host "Error: A valid integer 'Number' parameter is required in the query string." -ForegroundColor Red
+# Check if the 'Number' parameter is provided
+if (-not $queryParams['Number']) {
+    Write-Host "Error: A 'Number' parameter is required in the query string." -ForegroundColor Red
     Write-Host "Example usage:" -ForegroundColor Yellow
     Write-Host "iwr -useb 'https://raw.githubusercontent.com/YourUsername/CheckPrime/main/CheckPrime.ps1?Number=29' | iex"
     exit 1
 }
 
-# Convert the number to an integer and check if it's prime
-$Number = [int]$Number
+# Ensure the provided 'Number' is a valid integer
+$Number = [int]$queryParams['Number']
+if ($null -eq $Number) {
+    Write-Host "Error: Invalid 'Number' parameter. Please provide a valid integer." -ForegroundColor Red
+    exit 1
+}
+
+# Check if the number is prime and output the result
 if (Is-Prime -Number $Number) {
     Write-Host "The number $Number is a prime number." -ForegroundColor Green
 } else {
     Write-Host "The number $Number is NOT a prime number." -ForegroundColor Red
 }
-# At the end of your script
-Read-Host "Press Enter to exit"
-
